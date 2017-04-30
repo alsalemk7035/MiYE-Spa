@@ -1,0 +1,51 @@
+ Spa Services Info
+------------------------------------------------------------
+
+Reservation Data of ID no.: 111
+
+The Name of the Guest is: Khalaf Alsalem
+
+Spa service:Speciality TreatmentService Type: 
+
+Reservation Date: 05/01/2017 Reservation Time: 2:00
+
+Price: $ 210
+
+Date when service was reserved: 04/30/2017
+
+
+------------------------------------------------------------
+ Spa Services Info
+------------------------------------------------------------
+
+Reservation Data of ID no.: 112
+
+The Name of the Guest is: Ahmed Alsami
+
+Spa service:FacialsService Type: Collagen Facial
+
+Reservation Date: 05/02/2017 Reservation Time: 2:45
+
+Price: $ 120
+
+Date when service was reserved: 04/30/2017
+
+
+------------------------------------------------------------
+ Spa Services Info
+------------------------------------------------------------
+
+Reservation Data of ID no.: 333
+
+The Name of the Guest is: Khalaf Ahmed
+
+Spa service:Speciality TreatmentService Type: 
+
+Reservation Date: 23434 Reservation Time: 344
+
+Price: $ 210
+
+Date when service was reserved: 343
+
+
+------------------------------------------------------------
