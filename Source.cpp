@@ -14,7 +14,7 @@ struct Name              // structure for naming in program
 };
 struct Name2              // structure for naming in program
 {
-	int  C_ID;			//character arrays for the names to reserv a spa
+	char  C_ID;			//character arrays for the names to reserv a spa
 	char first[20];
 	char last[20];
 	char date[20];
@@ -24,11 +24,13 @@ struct Name2              // structure for naming in program
 void vacant_rooms();                //for vacant rooms|
 void customer_reserve();           //for reservation  |
 void check();                    //for the viewing guest history
-void user_total();                                //for user total on the time checkout
 void del_resdata();                            // in order delete
 void spa_reseve();				// for spa reservations
 void del_spadata();				// for deleting spa reservations
 void spa_check();				// for viewing spa reservations history
+void room_main();				// for spa reservations
+void spa_main();				// for deleting spa reservations
+void maintenance_main();				// for viewing spa reservations history
 
 								//------------------------.>//
 
@@ -41,34 +43,158 @@ int main()
 	char again;
 
 	cout << endl;
-	cout << "            *                                 *    " << endl;
-	cout << "          **                                   **   " << endl;
-	cout << "   *** Welcome to the Hotel Reservation Application ***" << endl;
-	cout << "          **                                   **  " << endl;
-	cout << "            *                                 *   " << endl;
+	cout << "            *                 *    " << endl;
+	cout << "          **                   **   " << endl;
+	cout << "   *** Welcome to MiYE Resort and Spa ***" << endl;
+	cout << "          **                   **  " << endl;
+	cout << "            *                *  " << endl;
 	cout << endl;
-
-
 
 	do
 	{
-		cout << "Welcome to the Main Menu " << endl;
 		cout << endl;
-		cout << "Press 1 to reserve a room. " << endl;
+	cout << "** Welcome to The Main Menu **" << endl;
 		cout << endl;
-		cout << "Press 2 to see the vacant rooms. " << endl;
 		cout << endl;
-		cout << "Press 3 to check out a room. " << endl;
+		cout << "Press 1 for room reservations. " << endl;
 		cout << endl;
-		cout << "Press 4 to see the history of reserved rooms. " << endl;
+		cout << "Press 2 for spa reservations. " << endl;
 		cout << endl;
-		cout << "Press 5 to delete room reservation data. " << endl;
+		cout << "Press 3 for maintenance. " << endl;
 		cout << endl;
-		cout << "Press 6 to make spa Reservation. " << endl;
+		cout << "Press 0 to Exit application. " << endl;
 		cout << endl;
-		cout << "Press 7 to see the history of reserved spa services. " << endl;
 		cout << endl;
-		cout << "Press 8 to delete spa reservation data. " << endl;
+		cout << "Please Enter your choice Here: ";
+		cin >> a;
+		cout << "_____________________________________" << endl;
+		cout << endl;
+		switch (a)
+		{
+			cout << "________________________________________" << endl;
+		case 0:
+			break;
+		case 1:
+			
+			cout << endl;
+			room_main();     // funtion calling
+			break;
+		case 2:
+			
+			cout << endl;
+			spa_main();    ///funtion calling
+			break;
+		case 3:
+			
+			cout << endl;
+			maintenance_main();    //function calling   
+			break;
+		
+		default:
+			cout << "you have enter an invalid choice " << endl;
+			cout << endl;
+		}
+		cout << "Press 1 to go back into MAIN Menu or 0 to terminate the program: ";
+		cin >> again;
+		cout << "___________________________________" << endl;
+		cout << endl;
+	} while (again == '1');
+	cout << "Thankyou! for using MiYE Reservations application." << endl;
+	cout << "Have a nice day! " << endl;
+	cout << endl;
+	cout << "_________________________________________" << endl;
+
+	system("pause");
+}
+//....................................................................//
+//for room main menu
+//....................................................................//
+void room_main()
+{
+
+	int a;
+
+	cout << endl;
+	cout << "            *                     *    " << endl;
+	cout << "          **                       **   " << endl;
+	cout << "   *** Welcome to Room Reservaion Menu ***" << endl;
+	cout << "          **                       **  " << endl;
+	cout << "            *                     *  " << endl;
+	cout << endl;
+
+
+		cout << "Press 1 to see the vacant rooms. " << endl;
+		cout << endl;
+		cout << "Press 2 to reserve a room. " << endl;
+		cout << endl;
+		cout << "Press 3 to see the history of reserved rooms. " << endl;
+		cout << endl;
+		cout << "Press 4 to delete room reservation data. " << endl;
+		cout << endl;
+		cout << "Press 0 to return to the main menu. " << endl;
+		cout << endl;
+		cout << "Please Enter your choice Here: ";
+		cin >> a;
+		cout << "_____________________________________" << endl;
+		cout << endl;
+		switch (a)
+		{
+			cout << "________________________________________" << endl;
+		case 0:
+			break;
+		case 1:
+			
+			cout << endl;
+			vacant_rooms();    ///funtion calling
+			break;
+			
+		case 2:
+			
+			cout << endl;
+			customer_reserve();     // funtion calling
+			break;
+		
+		case 3:
+			
+			cout << endl;
+
+			check();    //function calling           
+			break;
+		case 4:
+			
+			cout << endl;
+			del_resdata();    //function calling
+			break;
+		
+		default:
+			cout << "you have enter an invalid Choice " << endl;
+			cout << endl;
+		}
+		
+	
+}
+//....................................................................//
+//for spa main menu
+//....................................................................//
+
+void spa_main()
+{
+
+	int a;
+
+	cout << endl;
+	cout << "            *                    *    " << endl;
+	cout << "          **                      **   " << endl;
+	cout << "   *** Welcome to Spa Reservaion Menu ***" << endl;
+	cout << "          **                      **  " << endl;
+	cout << "            *                    *  " << endl;
+	cout << endl;
+
+		cout << "Press 1 to make spa reservation. " << endl;
+		cout << endl;
+		cout << "Press 2 to see the history of reserved spa services. " << endl;
+		cout << endl;
+		cout << "Press 3 to delete spa reservation data. " << endl;
 		cout << endl;
 		cout << "Press 0 to Exit application. " << endl;
 		cout << endl;
@@ -82,166 +208,39 @@ int main()
 		case 0:
 			break;
 		case 1:
-			cout << "     *                           *" << endl;
-			cout << " ** Welcome to the Reservation Menu **" << endl;
-			cout << "     *                           *" << endl;
-			cout << endl;
-			cout << endl;
-			customer_reserve();     // funtion calling
-			break;
-		case 2:
-			cout << "      *                       *" << endl;
-			cout << "  ** Welcome to the Vacant Rooms **" << endl;
-			cout << "      *                       *" << endl;
-			cout << endl;
-			cout << endl;
-			vacant_rooms();    ///funtion calling
-			break;
-		case 3:
-			cout << "    *                          *" << endl;
-			cout << "** Welcome to the User Total Menu **" << endl;
-			cout << "    *                          *" << endl;
-			cout << endl;
-			cout << endl;
-			user_total();    //function calling   
-			break;
-		case 4:
-			cout << "    *                       *" << endl;
-			cout << "** Welcome to the History Menu **" << endl;
-			cout << "    *                       *" << endl;
-			cout << endl;
-			cout << endl;
-
-			check();    //function calling           
-			break;
-		case 5:
-			cout << "        *                                             *" << endl;
-			cout << "    ** Welcome to delete room reservations data function **" << endl;
-			cout << "        *                                             *" << endl;
-			cout << endl;
-			cout << endl;
-			del_resdata();    //function calling
-			break;
-		case 6:
-			cout << "        *                      *" << endl;
-			cout << "    ** Welcome to Spa Reservation **" << endl;
-			cout << "        *                      *" << endl;
-			cout << endl;
+			
 			cout << endl;
 			spa_reseve();    //function calling
 			break;
-		case 7:
-			cout << "    *                                                 *" << endl;
-			cout << "** Welcome to the history menu for reserved spa services **" << endl;
-			cout << "    *                                                 *" << endl;
+		case 2:
+			
 			cout << endl;
-			cout << endl;
-
 			spa_check();    //function calling           
 			break;
 			del_spadata();    //function calling
 			break;
-		case 8:
-			cout << "        *                                            *" << endl;
-			cout << "    ** Welcome to delete spa reservations data function **" << endl;
-			cout << "        *                                            *" << endl;
-			cout << endl;
+		case 3:
+			
 			cout << endl;
 			del_spadata();    //function calling
 			break;
 		default:
 			cout << "you have enter an invalid Choice " << endl;
 			cout << endl;
+			return;
 		}
-		cout << "Press 1 to go back into MAIN Menu or 0 to terminate the program: ";
-		cin >> again;
-		cout << "___________________________________" << endl;
-		cout << endl;
-	} while (again == '1');
-	cout << "Thankyou! for using Hotel Reservation application." << endl;
-	cout << "Have a nice day! " << endl;
-	cout << endl;
-	cout << "_________________________________________" << endl;
-
-	system("pause");
 }
-//....................................................................//
 
 //....................................................................//
-void user_total()   //funtion definition to calculate the bill
+//for maintenance main menu
+//....................................................................//
+void maintenance_main()
 {
-	int choice, days, total1;
-	int single = 175;
-	int doubl = 325;
-	int quadruple = 600;
-	char again;
-	do
-	{
-		cout << "Which kind of Room did the guest stayed in?  " << endl;
-		cout << endl;
-		cout << " 1.Single Rooms " << endl;
-		cout << endl;
-		cout << " 2.Double Rooms " << endl;
-		cout << endl;
-		cout << " 3.Quadruple " << endl;
-		cout << endl;
 
-		cout << "Select 1,2 or 3 . " << endl;
-		cout << endl;
-		cout << "Enter Your CHoice Here_: ";
-		cin >> choice;
-		cout << "__________________________________" << endl;
-		switch (choice)
-		{
-		case 1:
-			cout << "You have Selected single room. " << endl;
-			cout << endl;
-			cout << " For How many days did the guest stayed: ";
-			cin >> days;
-			cout << endl;
-
-			total1 = single*days;
-			cout << "Your Total Total bill + service tax = (" << total1 << " USD.)" << endl;
-			cout << endl;
-			cout << "______________________________" << endl;
-
-			break;
-		case 2:
-			cout << "You Have Selected Double room." << endl;
-			cout << endl;
-			cout << " For How many days did the guest stayed: ";
-			cin >> days;
-			cout << endl;
-
-			total1 = doubl*days;
-			cout << "Your Total Total bill + service tax = (" << total1 << " USD.)" << endl;
-			cout << endl;
-			cout << "______________________________" << endl;
-			break;
-		case 3:
-			cout << "You Have Selected Quadruple. " << endl;
-			cout << endl;
-			cout << " For How many days did the guest stayed: ";
-			cin >> days;
-			cout << endl;
-			total1 = quadruple*days;
-			cout << "Your Total Total bill + service tax = (" << total1 << " USD.)" << endl;
-			cout << endl;
-			cout << "______________________________" << endl;
-			break;
-		default:
-			cout << "you have enter an invalid Choice " << endl;
-			cout << endl;
-		}
-		cout << "Do you want to checkout for another room? (Y/N): ";
-		cin >> again;
-		cout << "___________________________________" << endl;
-		cout << endl;
-	} while (again == 'y' || again == 'Y');
-
+	
 }
 //....................................................................//
-
+//function for spa reservation
 //....................................................................//
 void spa_reseve()    //function definition 
 {
@@ -274,13 +273,10 @@ void spa_reseve()    //function definition
 		cin.ignore();                       // to skip the new line character
 		cout << endl;
 		cout << "Enter Guest's First Name: ";
-		cin.getline(spa_guest.first, 20);
+		cin >> spa_guest.first;
 		cout << endl;
 		cout << "Enter Guest's Last Name: ";
-		cin.getline(spa_guest.last, 20);
-		cout << endl;
-		cout << "Enter Todays Date: ";
-		cin.getline(spa_guest.date, 20);
+		cin>>spa_guest.last;
 		cout << endl;
 		cout << "Choose the spa service: " << endl;
 		cout << "1. Meneral ";
@@ -301,11 +297,11 @@ void spa_reseve()    //function definition
 			cout << endl;
 			cout << "When do you want to reserve? " << endl;
 			cout << endl;
-			cout << "Enter the date here: "; cin >> res_date;
+			cout << "Enter the date here (mm-dd-yyyy): "; cin >> res_date;
 			cout << endl;
-			cout << "what time do you want to have your service " << endl;
+			cout << "what time do you want to have your service? " << endl;
 			cout << endl;
-			cout << "Enter the time here: "; cin >> res_time;
+			cout << "Enter the time here  (hh:mm): "; cin >> res_time;
 			cout << endl;
 			cout << "Do you want to reserve this service for 60 mins or 90 mins?";
 			cout << endl;
@@ -354,13 +350,14 @@ void spa_reseve()    //function definition
 				cout << "You have chosen shiatsu massage";
 				cout << endl;
 				ch_type = "Shiatsu Massage";
-				if (type == 3)
-				{
-					cout << "You have chosen deep tissue massage";
-					cout << endl;
-					ch_type = "Deep Tissue Massage";
-				}
-				else
+			}
+			else if (type == 3)
+			{
+				cout << "You have chosen deep tissue massage";
+				cout << endl;
+				ch_type = "Deep Tissue Massage";
+			}
+			else
 				{
 					cout << "Sorry! You have entered invalid choice" << endl;
 				}
@@ -478,32 +475,24 @@ void spa_reseve()    //function definition
 				cout << "You have chosen sugar scrub treatment";
 				cout << endl;
 				ch_type = "Sugar Scrub Treatment";
-				if (type == 3)
-				{
-					cout << "You have chosen herbal body wrap treatment";
-					cout << endl;
-					ch_type = "Herbal Body Wrap Treatment";
-				}
-				else if (type == 4)
-				{
-					ch_type = "Botanical Mud Wrap Treatment";
-					cout << "You have chosen botanical mud wrap treatment";
-					cout << endl;
-				}
-				else
-				{
-					cout << "Sorry! You have entered invalid choice";
-					return;
-				}
-
-
-				cout << "______________________________" << endl;
-				break;
-		default:
-			cout << "you have enter an invalid Choice " << endl;
-			cout << endl;
-			return;
-
+			}
+			else if (type == 3)
+			{
+				cout << "You have chosen herbal body wrap treatment";
+				cout << endl;
+				ch_type = "Herbal Body Wrap Treatment";
+			}
+			else if (type == 4)
+			{
+				ch_type = "Botanical Mud Wrap Treatment";
+				cout << "You have chosen botanical mud wrap treatment";
+				cout << endl;
+			}
+			
+			else
+			{
+				cout << "Sorry! You have entered invalid choice";
+				return;
 			}
 			cout << endl;
 			cout << "When do you want to reserve? " << endl;
@@ -530,9 +519,14 @@ void spa_reseve()    //function definition
 				cout << endl;
 				return;
 			}
-			}
-		}
+			cout << "______________________________" << endl;
+			break;
+		default:
+			cout << "you have enter an invalid Choice " << endl;
+			cout << endl;
+			return;
 
+			}
 
 		cout << endl;
 		int a;                            ///for choice
@@ -557,9 +551,6 @@ void spa_reseve()    //function definition
 			file << endl;
 			file << "Price: $ " << price << endl;
 			file << endl;
-			file << "Date when service was reserved: " << spa_guest.date << endl;
-			file << endl;
-			file << endl;
 			file << "------------------------------------------------------------" << endl;
 			file.close();
 			cout << "Record Saved..." << endl;
@@ -582,7 +573,7 @@ void spa_reseve()    //function definition
 
 
 //....................................................................//
-
+//function for room reservation 
 //....................................................................//
 void customer_reserve()    //function definition 
 {
@@ -594,7 +585,7 @@ void customer_reserve()    //function definition
 
 									  // struct tm: http://cplusplus.com/reference/clibrary/ctime/tm/
 	int day = now->tm_mday;
-	int month = now->tm_mon + 1;
+	int mmonth=0;
 	int year = now->tm_year + 1900;
 	int o_month = now->tm_mon + 1;
 	int o_day = now->tm_mday;
@@ -630,11 +621,11 @@ void customer_reserve()    //function definition
 		cout << endl;
 		cout << "Check-in Date:";
 		cout << endl;
-		cout << "Enter month (mm): ", cin >> month;
+		cout << "Enter month (mm): ", cin >> mmonth;
 		cout << "Enter day (dd): ", cin >> day;
 		cout << "Enter year (yyyy): ", cin >> year;
 		cout << endl;
-		if (month < now->tm_mon + 1 || day < now->tm_mday || year < now->tm_year + 1900)
+		if (mmonth < now->tm_mon + 1 || day < now->tm_mday || year < now->tm_year + 1900)
 		{
 			cout << "You have entered a date that had passed." << endl;
 			cout << endl;
@@ -649,7 +640,7 @@ void customer_reserve()    //function definition
 			cout << "Enter year (yyyy): ", cin >> o_year;
 			cout << endl;
 		}
-		if (o_month < month || o_day < day)
+		if (o_month < mmonth || o_day < day)
 		{
 			cout << "You have entered a date that had passed Or before your Check-in date." << endl;
 			cout << endl;
@@ -658,7 +649,7 @@ void customer_reserve()    //function definition
 		else
 		{
 
-			if ((month = 5 && day <= 15), (month = 8 && day <= 15), (month = 12 && day >= 15), (month = 1 && day <= 15))
+			if ((mmonth = 5 && day <= 15), (mmonth = 8 && day <= 15), (mmonth = 12 && day >= 15), (mmonth = 2 && day <= 15))
 			{
 				single = 175;
 				doubl = 325;
@@ -730,6 +721,7 @@ void customer_reserve()    //function definition
 		default:
 			cout << "you have enter an invalid Choice " << endl;
 			cout << endl;
+			return;
 		}
 		cout << "Enter The Room # to be Reserved: ";
 		cin >> guest.room;
@@ -746,13 +738,13 @@ void customer_reserve()    //function definition
 			cout << endl;
 			file << "------------------------------------------------------------" << endl;
 			file << endl;
-			file << "Reservation Data of Room no.: " << guest.room << endl;
+			file << "Reservation Data of Room no.: " << guest.room <<"	"<< "Room Type: " << r_type<< endl;
 			file << endl;
 			file << "The Name of the Guest is: " << guest.first << " " << guest.last << endl;
 			file << endl;
 			file << "Mobile No.: +" << guest.mob << endl;
 			file << endl;
-			file << "Check_in date: " << month << "-" << day << "-" << year << endl;
+			file << "Check_in date: " << mmonth << "-" << day << "-" << year << endl;
 			file << endl;
 			file << "Check_out date: " << o_month << "-" << o_day << "-" << o_year << endl;
 			file << endl;
